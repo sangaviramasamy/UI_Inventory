@@ -1,18 +1,6 @@
 <template>
-    <div
-        v-for="phone in phones"
-        :key="phone.id"
-        class="product-info"
-        style="margin-top: 13px"
-      >
-        <img
-          class="phone-image"
-          :src="img1"
-          alt="Phone Image"
-          width="150"
-          height="200"
-          style="margin-top: 10px"
-        />
+  <!-- <div v-for="(phone,index) in phones" :key="index" class="product-info" style="margin-top: 13px">
+        <img class="phone-image" :src="img1" alt="Phone Image" width="150" height="200" style="margin-top: 10px"/>
         <div class="system-configuration" style="background-color: whitesmoke">
           <h2>{{ phone.productName }}</h2>
           <ul>
@@ -22,141 +10,180 @@
           </ul>
         </div>
         <div class="price" style="background-color: whitesmoke">
-          <h2>Price</h2>
-          <p style="font-size: x-large">{{ formatPrice(phone.price) }}</p>
+        
+          <h5>{{ phone.quantity }}</h5>
+          <button style="margin-right:3px" @click="increments(index)">+</button>
+          <button style="margin-right:3px" @click="decrements(index)">-</button>
+          <button style="margin-right:3px" @click="adding(phone)">Add to cart</button>
+        </div>
+      </div> -->
+
+
+  <!-- <div class="layout" style="height: 175%;background-color: white; border-radius: 6px; width:94%;;margin-left: 40px; margin-top: 20px;">
+    <div class="product-list">
+        <div class="image1-container">
+            <div style="padding-top: 8px; font-weight: bold;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; padding-left: 40px;">
+                <p>Best Of Electronics</p>
+            </div>
+            <div class="image-container">
+                <img :src="img1"   width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px;padding-left: 30px;">
+                <div class="image-text">Printers</div>
+            <div class="image-text">From Rs.39999</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1" width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Projectors</div>
+                <div class="image-text">From Rs.9999</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1" width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Best of shavers</div>
+                <div class="image-text">From Rs.1640</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1"  width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Projector</div>
+                <div class="image-text">From Rs.29</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1"  width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Monitors</div>
+                <div class="image-text">From Rs.6599</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1"   width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Laptop</div>
+                <div class="image-text">From Rs.35000</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1" width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Projector</div>
+                <div class="image-text">From Rs.29</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1"   width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Monitors</div>
+                <div class="image-text">From Rs.6599</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1"  width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Laptop</div>
+                <div class="image-text">From Rs.35000</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1"   width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Monitors</div>
+                <div class="image-text">From Rs.6599</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1" width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Laptop</div>
+                <div class="image-text">From Rs.35000</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1" width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Projector</div>
+                <div class="image-text">From Rs.29</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1" width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Monitors</div>
+                <div class="image-text">From Rs.6599</div>
+            </div>
+            <div class="image-container">
+                <img :src="img1"   width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px">
+                <div class="image-text">Monitors</div>
+                <div class="image-text">From Rs.6599</div>
+            </div>
+             
+           
+        </div>
+      
+    </div>
+     
+    
+  </div> -->
+
+
+  <div class="layout" style="height: 175%; background-color: white; border-radius: 6px; width: 94%; margin-left: 40px; margin-top: 20px;" v-if="showAll">
+    <div class="product-list">
+      <div class="image1-container" style="margin-left: 6%;">
+        <div style="padding-top: 8px; font-weight: bold; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; padding-left: 40px;">
+          <p>Best Of Electronics</p>
+        </div>
+
+        <div v-for="(product,index) in products" :key="index" class="image-container" style="    margin-right: 2%;">
+          <img :src="product.img" width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px; padding-left: 30px;">
+          <div class="image-text">{{ product.productName }}</div>
+          <div class="image-text">Rs.{{ product.price }}</div>
+         
+          <button style="margin-left: 5px;" @click="increments(index)">+</button>
+           <span style="margin-left: 5px;margin-right: 5px;" >{{ product.quantity }}</span>
+          <button style="margin-right:3px" @click="decrements(index)">-</button>
+          <button  style="margin-left: 22px;" @click="addtocart(product)">Add to Cart</button>
+
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="layout" style="height: 175%; background-color: white; border-radius: 6px; width: 94%; margin-left: 40px; margin-top: 20px;" v-else>
+    <div class="product-list">
+      <div class="image1-container" style="margin-left: 6%;">
+        <div style="padding-top: 8px; font-weight: bold; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; padding-left: 40px;">
+          <p>Best Of Electronics</p>
+        </div>
+
+        <div v-for="(product,index) in filteredList" :key="index" class="image-container" style="    margin-right: 2%;">
+          <img :src="product.img" width="100" height="100" style="margin-top: 18px; margin-right: 50px; margin-left: 5px; padding-left: 30px;">
+          <div class="image-text">{{ product.productName }}</div>
+          <div class="image-text">Rs.{{ product.price }}</div>
+         
+          <button style="margin-left: 5px;" @click="increments(index)">+</button>
+           <span style="margin-left: 5px;margin-right: 5px;" >{{ product.quantity }}</span>
+          <button style="margin-right:3px" @click="decrements(index)">-</button>
+          <button  style="margin-left: 22px;" @click="addtocart(product)">Add to Cart</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script src="./js/product.js"></script>
-<style lang="scss" scoped>
-@import "@blibli/blue-design-tokens/dist/tokens-default.scss";
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: whitesmoke;
-}
-input {
-  margin-top: 11px;
-}
-.container {
-  // max-width: 1200px;
-  margin: 20px auto;
-}
-
-.filters {
-  float: left;
-  /* width: 30%; Adjust as needed */
-  padding: 20px;
-  border-right: 1px solid #ddd;
-  width: 225px;
-  height: 660px;
-}
-
-.product-info {
-  overflow: hidden; /* Clear the float */
-  padding: 20px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.phone-image {
-  max-width: 100%;
-  height: auto;
-  display: block; /* Prevents unwanted space at the bottom */
-  margin-bottom: 10px;
-}
-
-.system-configuration {
-  /* background-color: whitesmoke;*/
-  background: rgba(255, 255, 255, 0.8);
-  position: absolute;
-  top: 26px;
-  right: 274px;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  padding-right: 450px;
-}
-
-.price {
-  position: absolute;
-  top: 20px;
-  right: 151px;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 10px;
-  font-weight: bold;
-  color: green;
-}
-li {
-  letter-spacing: 2px;
-  font-size: small;
-}
-
-/* The container */
-.container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 15px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Hide the browser's default checkbox */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196f3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
+<style>
+.body{
+            background-color: white;
+        }
+        .category {
+            margin-top: 10px;
+            background-color: white;
+            border-radius: 6px;
+            height: 86px;
+            margin-left: 40px;
+            margin-right: 40px;
+            /* Add any category styles here */
+        }
+      
+        .Images {
+            margin-left: 135px;
+            margin-right: 135px;
+            /* Add any image container styles here */
+        }
+      
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+      
+        .image-text {
+          text-align: center;
+          font-size: 12px;
+          padding-right: 41px;
+        }
+        .fil{
+            padding: 20px;
+            width: 12%;
+            float: left;
+            background-color: white;
+        }
 </style>
-

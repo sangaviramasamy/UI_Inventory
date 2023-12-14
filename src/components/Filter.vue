@@ -17,16 +17,18 @@
     <label for="MOTO">MOTO</label><br /><br />
 
     <h4 style="margin: 0">Price Range</h4>
-    <!-- <div>Picked: {{ picked }}</div> -->
+    <div>Picked: {{ picked }}</div>
 
-    <input type="radio" id="one" value="One" v-model="picked" />
+    <input type="radio" id="one" value="One" v-model="picked"  @click="filterproducts"/>
     <label for="one">30000 - 40000</label><br />
-    <input type="radio" id="two" value="Two" v-model="picked" />
+    <input type="radio" id="two" value="Two" v-model="picked" @click="filterproducts"/>
     <label for="two">40000 - 50000</label><br />
-    <input type="radio" id="three" value="three" v-model="picked" />
+    <input type="radio" id="three" value="Three" v-model="picked" @click="filterproducts"/>
     <label for="three">50000 - 60000</label><br />
-    <input type="radio" id="four" value="four" v-model="picked" />
+    <input type="radio" id="four" value="Four" v-model="picked" @click="filterproducts"/>
     <label for="four">60000 - 100000</label><br />
+    <br>
+    <!-- <button @click="filters(picked)">Filter</button> -->
 
     <h4>Colour : {{ selected }}</h4>
 

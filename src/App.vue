@@ -4,7 +4,8 @@
 
     <div>
       <filtercomponent></filtercomponent>
-      <productcomponent></productcomponent>
+      <router-view></router-view>
+      <!-- <productcomponent></productcomponent> -->
     </div>
   </div>
 </template>

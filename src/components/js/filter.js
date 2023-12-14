@@ -2,12 +2,13 @@ import img1 from "@/assets/images/phoneimg.jpeg"
 import img2 from "@/assets/images/iphone14img.png"
 import logo from "@/assets/images/logo.png"
 import { ref } from 'vue'
-
+import { productStore } from "../../stores/product.js";
+import {mapActions, mapState, mapWritableState} from "pinia"
 export default {
    
   data() {
     const checkedNames = ref([])
-    const picked = ref('One')
+    
     const selected = ref('')
     const phones = [
       {
@@ -56,18 +57,25 @@ export default {
       logo,
       checkedNames,
       selected,
-      phones
+      phones,
+      picked: 0
 
     }
   },
   methods: {
+    ...mapActions(productStore, ["filterproduct"]),
     formatPrice(price) {
       // Implement a method to format the price as needed
       // For example, you can add currency symbols, decimals, etc.
       // Replace this with your actual implementation.
       return `$${(price / 100).toFixed(2)}`;
+    },
+    filterproducts(){
+ 
+      this.filterproduct(this.picked)
     }
-  },
+
+  } 
 
 
 

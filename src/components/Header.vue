@@ -3,18 +3,19 @@
        
     <div class="search-bar" style="margin-left: 70px;">
          <span class="input-group-text border-0" id="search-addon">
-    <!-- <i class="fas fa-search"></i> -->
-  </span>
-  <span>
-    {{ title }}
-    <button @click="$emit('enlarge-text','Received ',title)">Search</button>
-  </span>
 
-        <input type="text" placeholder="Search for products, brands, and more..." style="width: 585px; margin-top: 12px; margin-left: 4px; border-radius: 9px; height: 38px;">
-        <a href="#" style="margin-left: 37%;"><i class="fa fa-user" style="margin-right: 6px;"></i>Login</a>
-        <a href="#" style="margin-left: 20px;"><i class="fas fa-shopping-cart" style="margin-right: 5px;"></i>Cart</a>
-        <a href="#" style="margin-left: 20px;"><i class="fas fa-shopping-cart" style="margin-right: 5px;"></i>Products</a>
+  </span>
+   
+
+        <input ref="input" type="text" placeholder="Search for products, brands, and more..." style="width: 585px; margin-top: 12px; margin-left: 4px; border-radius: 9px; height: 38px;">
+ 
+        
+        <button @click="pageChange()" style="margin-right: 3%;margin-left: 43%;"> Cart <span>{{cart.length}}</span></button>
+        <button @click="pageChange2()">Product</button>
+        <!-- <a href="#" style="margin-left: 20px;"><i class="fas fa-shopping-cart" style="margin-right: 5px;"></i>Products</a> -->
     </div>
+
+     
 </div>
 </template>
 <script src="./js/header.js">
