@@ -1,26 +1,43 @@
-import { useApiTestStore } from '@/stores/api-store'
+import { useApiTestStore } from "@/stores/api-store";
 
 import { productStore } from "../../stores/product.js";
-import {mapActions, mapState, mapWritableState} from "pinia"
-
+import { mapActions, mapState, mapWritableState } from "pinia";
 
 export default {
-  mounted(){
-console.log(this.$refs.input)
+  data(){
+    return{
+      activeMenu: 'product'
+    }
   },
-    props : ['title'],
-    emits : ['enlarge-text'],
+  mounted() {
+    console.log(this.$refs.input);
+  },
+  props: ["title"],
+  emits: ["enlarge-text"],
 
-    methods: {
-        pageChange() {
-          this.$router.push("/cart")
-        },
-        pageChange2() {
-            this.$router.push("/")
-          }
-
-},
-computed : {
-  ...mapState(productStore, ["cart"])
-},
-}
+  methods: {
+    handleMenuClick(menuName) {
+      this.activeMenu = menuName;
+      if (menuName === 'login') {
+      } else if (menuName === 'product') {
+        this.pageChange2();
+      } else if (menuName === 'cart') {
+        this.pageChange();
+      } else if (menuName === 'addProduct') {
+        this.pageChange3();
+      }
+    },
+    pageChange() {
+      this.$router.push("/cart");
+    },
+    pageChange2() {
+      this.$router.push("/");
+    },
+    pageChange3() {
+      this.$router.push("/form");
+    },
+  },
+  computed: {
+    ...mapState(productStore, ["cart"]),
+  },
+};

@@ -1,10 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import { app, pages } from '@/config'
-// import HomePage from '@/pages/HomePage.vue'
 import ProductList from '@/components/Product.vue'
 import CartPage from  '@/pages/Cart.vue'
-
-// const AboutPage = () => import(/* webpackChunkName: "p-about" */ '@/pages/AboutPage.vue')
+import form from  '@/pages/Form.vue'
+import update from  '@/pages/Update.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -18,6 +16,16 @@ const router = createRouter({
       path: '/cart',
       name: "cart",
       component: CartPage
+    },
+    {
+      path: '/form',
+      name:'form',
+      component:form
+    },
+    {
+      path: '/update/:id',
+      name:'update',
+      component:update
     }
     
   ]

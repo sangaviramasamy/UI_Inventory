@@ -4,11 +4,12 @@ import logo from "@/assets/images/logo.png"
 import { ref } from 'vue'
 import { productStore } from "../../stores/product.js";
 import {mapActions, mapState, mapWritableState} from "pinia"
+import product from "./product.js";
 export default {
    
   data() {
-    const checkedNames = ref([])
     
+    const checkedNames = ref([])
     const selected = ref('')
     const phones = [
       {
@@ -52,6 +53,14 @@ export default {
       }
     ];
     return {
+      categories: [
+        "iPhone",
+        "Oppo",
+        "Moto",
+        "RealMe"
+      ],
+      selectedCategory: [],
+
       img1,
       img2,
       logo,
@@ -62,17 +71,28 @@ export default {
 
     }
   },
+  watch: {
+
+    selectedCategory(newCategory, oldCategory) {
+      this.filterProductStoreByCategory(newCategory,product);
+    },
+  },
   methods: {
-    ...mapActions(productStore, ["filterproduct"]),
+    ...mapActions(productStore, ["filterProductStoreByCategory", "setAll"]),
+
     formatPrice(price) {
-      // Implement a method to format the price as needed
-      // For example, you can add currency symbols, decimals, etc.
-      // Replace this with your actual implementation.
       return `$${(price / 100).toFixed(2)}`;
     },
     filterproducts(){
- 
       this.filterproduct(this.picked)
+    },
+    clearFilters(){
+      this.selectedCategory = null;
+      //After the next DOM update, execute this code
+      this.$nextTick(() => {
+        this.setAll();
+      });
+      
     }
 
   } 
